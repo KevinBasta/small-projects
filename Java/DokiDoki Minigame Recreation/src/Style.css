@@ -1,0 +1,31 @@
+ .text {
+    -fx-font: normal bold 30px 'serif';
+ }
+
+ .textTwo {
+   -fx-font: normal normal 20px 'serif';
+   -fx-fill: #c963b3;
+}
+
+.textTwoB {
+   -fx-font: normal bold 20px 'serif';
+   -fx-fill: #c963b3;
+}
+ 
+.vboxOne {
+    -fx-width: 100px;
+    -fx-padding: 50px;
+    -fx-border-insets: 50px;
+    -fx-background-insets: 50px;
+}
+
+ .vboxTwo {
+    -fx-width: 100px;
+    -fx-padding: 50px;
+    -fx-border-insets: 50px;
+    -fx-background-insets: 50px;
+ }
+
+ .hbox {
+
+ }

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>2D Array visualizer</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+		div {
+			width: 30px;
+			height: 30px;
+			border: 1px solid black;
+			background-color: red;
+			float: left;
+			padding: 2px;
+		}
+		
+		button {
+			color: white;
+			font-size: 20px;
+			background-color: #1C4789;
+			width: 200px;
+		}
+		
+		button:focus {
+			background-color: #0F2B56;
+			box-shadow: 0px;
+			outline:0;
+		}
+
+    </style>
+</head>
+
+<body>
+	<!-- every div represents a pixel, the ids are't really being used -->
+	<div id="1"></div>
+	<div id="2"></div>
+	<div id="3"></div>
+	<div id="4"></div>
+	<div id="5"></div>
+	<div id="6"></div>
+	<div id="7"></div>
+	<div id="8"></div>
+	<div id="9"></div>
+	<div id="10"></div>
+	<div id="11"></div>
+	<div id="12"></div>
+	<br><br>
+	<div id="13"></div>
+	<div id="14"></div>
+	<div id="15"></div>
+	<div id="16"></div>
+	<div id="17"></div>
+	<div id="18"></div>
+	<div id="19"></div>
+	<div id="20"></div>
+	<div id="21"></div>
+	<div id="22"></div>
+	<div id="23"></div>
+	<div id="24"></div>
+	<br><br>
+	<div id="25"></div>
+	<div id="26"></div>
+	<div id="27"></div>
+	<div id="28"></div>
+	<div id="29"></div>
+	<div id="30"></div>
+	<div id="31"></div>
+	<div id="32"></div>
+	<div id="33"></div>
+	<div id="34"></div>
+	<div id="35"></div>
+	<div id="36"></div>
+	<br><br>
+	<div id="37"></div>
+	<div id="38"></div>
+	<div id="39"></div>
+	<div id="40"></div>
+	<div id="41"></div>
+	<div id="42"></div>
+	<div id="43"></div>
+	<div id="44"></div>
+	<div id="45"></div>
+	<div id="46"></div>
+	<div id="47"></div>
+	<div id="48"></div>
+	<br><br>
+	<div id="49"></div>
+	<div id="50"></div>
+	<div id="51"></div>
+	<div id="52"></div>
+	<div id="53"></div>
+	<div id="54"></div>
+	<div id="55"></div>
+	<div id="56"></div>
+	<div id="57"></div>
+	<div id="58"></div>
+	<div id="59"></div>
+	<div id="60"></div>
+	<br><br>
+	<div id="61"></div>
+	<div id="62"></div>
+	<div id="63"></div>
+	<div id="64"></div>
+	<div id="65"></div>
+	<div id="66"></div>
+	<div id="67"></div>
+	<div id="68"></div>
+	<div id="69"></div>
+	<div id="70"></div>
+	<div id="71"></div>
+	<div id="72"></div>
+	<br><br>
+	<div id="73"></div>
+	<div id="74"></div>
+	<div id="75"></div>
+	<div id="76"></div>
+	<div id="77"></div>
+	<div id="78"></div>
+	<div id="79"></div>
+	<div id="80"></div>
+	<div id="81"></div>
+	<div id="82"></div>
+	<div id="83"></div>
+	<div id="84"></div>
+	<br><br>
+	<div id="85"></div>
+	<div id="86"></div>
+	<div id="87"></div>
+	<div id="88"></div>
+	<div id="89"></div>
+	<div id="90"></div>
+	<div id="91"></div>
+	<div id="92"></div>
+	<div id="93"></div>
+	<div id="94"></div>
+	<div id="95"></div>
+	<div id="96"></div>
+	<br><br>
+	<div id="97"></div>
+	<div id="98"></div>
+	<div id="99"></div>
+	<div id="100"></div>
+	<div id="101"></div>
+	<div id="102"></div>
+	<div id="103"></div>
+	<div id="104"></div>
+	<div id="105"></div>
+	<div id="106"></div>
+	<div id="107"></div>
+	<div id="108"></div>
+	<br><br>
+	<div id="109"></div>
+	<div id="110"></div>
+	<div id="111"></div>
+	<div id="112"></div>
+	<div id="113"></div>
+	<div id="114"></div>
+	<div id="115"></div>
+	<div id="116"></div>
+	<div id="117"></div>
+	<div id="118"></div>
+	<div id="119"></div>
+	<div id="120"></div>
+	<br><br>
+	<div id="121"></div>
+	<div id="122"></div>
+	<div id="123"></div>
+	<div id="124"></div>
+	<div id="125"></div>
+	<div id="126"></div>
+	<div id="127"></div>
+	<div id="128"></div>
+	<div id="129"></div>
+	<div id="130"></div>
+	<div id="131"></div>
+	<div id="132"></div>
+	<br><br>
+	<div id="133"></div>
+	<div id="134"></div>
+	<div id="135"></div>
+	<div id="136"></div>
+	<div id="137"></div>
+	<div id="138"></div>
+	<div id="139"></div>
+	<div id="140"></div>
+	<div id="141"></div>
+	<div id="142"></div>
+	<div id="143"></div>
+	<div id="144"></div>
+	<br><br>
+	<div id="145"></div>
+	<div id="146"></div>
+	<div id="147"></div>
+	<div id="148"></div>
+	<div id="149"></div>
+	<div id="150"></div>
+	<div id="151"></div>
+	<div id="152"></div>
+	<div id="153"></div>
+	<div id="154"></div>
+	<div id="155"></div>
+	<div id="156"></div>
+	<br><br>
+	<div id="157"></div>
+	<div id="158"></div>
+	<div id="159"></div>
+	<div id="160"></div>
+	<div id="161"></div>
+	<div id="162"></div>
+	<div id="163"></div>
+	<div id="164"></div>
+	<div id="165"></div>
+	<div id="166"></div>
+	<div id="167"></div>
+	<div id="168"></div>
+	<br><br>
+	<div id="169"></div>
+	<div id="170"></div>
+	<div id="171"></div>
+	<div id="172"></div>
+	<div id="173"></div>
+	<div id="174"></div>
+	<div id="175"></div>
+	<div id="176"></div>
+	<div id="177"></div>
+	<div id="178"></div>
+	<div id="179"></div>
+	<div id="180"></div>
+	<br><br>
+	<div id="181"></div>
+	<div id="182"></div>
+	<div id="183"></div>
+	<div id="184"></div>
+	<div id="185"></div>
+	<div id="186"></div>
+	<div id="187"></div>
+	<div id="188"></div>
+	<div id="189"></div>
+	<div id="190"></div>
+	<div id="191"></div>
+	<div id="192"></div>
+	<br><br>
+	
+	
+	<!-- this table is to organize the buttons for running the frames and/or animation -->
+	<table style="position: absolute; top: 10px; left: 450px;">
+		<tr>
+			<td><button onclick="NormalMario()">Standing Mario</button></td>
+			<td><button onclick="Animate()">Animated Mario Walk</button></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><button onclick="AnimationMarioOne()">Mario Walk Frame 1</button></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><button onclick="AnimationMarioTwo()">Mario Walk Frame 2</button></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>	<button onclick="AnimationMarioThree()">Mario Walk Frame 3</button></td>
+		</tr>
+	</table>
+	
+	
+	<script>
+	
+	//This is the array of colors for mario
+	var MarioPixelColors = ["grey", "grey", "grey", "red", "red", "red", "red", "red", "grey", "grey", "grey", "grey" 							//row 1 
+						, "grey", "grey", "red", "red", "red", "red", "red", "red", "red", "red", "red", "grey"									//row 2
+						, "grey", "grey", "Brown", "Brown", "Brown", "#EFD09A", "#EFD09A", "black", "#EFD09A", "grey", "grey", "grey" 			//row 3
+						, "grey", "Brown", "#EFD09A", "Brown", "#EFD09A", "#EFD09A", "#EFD09A", "black", "#EFD09A", "#EFD09A", "#EFD09A", "grey" //row 4
+						, "grey", "Brown", "#EFD09A", "Brown", "Brown", "#EFD09A", "#EFD09A", "#EFD09A", "black", "#EFD09A", "#EFD09A", "#EFD09A" //row 5
+						, "grey", "Brown", "Brown", "#EFD09A", "#EFD09A", "#EFD09A", "#EFD09A", "black", "black", "black", "black", "grey" 		 //row 6
+						, "grey", "grey", "grey", "#EFD09A", "#EFD09A", "#EFD09A", "#EFD09A", "#EFD09A", "#EFD09A", "#EFD09A", "grey", "grey" 	 //row 7
+						, "grey", "grey", "grey", "red", "blue", "red", "red", "red", "grey", "grey", "grey", "grey" 							//row 8
+						, "grey", "red", "red", "red", "blue", "red", "red", "blue", "red", "red", "red", "grey" 								//row 9
+						, "red", "red", "red", "red", "blue", "blue", "blue", "blue", "red", "red", "red", "red" 								//row 10
+						, "#EFD09A", "#EFD09A", "red", "blue", "yellow", "blue", "blue", "yellow", "blue", "red", "#EFD09A", "#EFD09A" 			//row 11
+						, "#EFD09A", "#EFD09A", "#EFD09A", "blue", "blue", "blue", "blue", "blue", "blue", "#EFD09A", "#EFD09A", "#EFD09A" 		//row 12
+						, "#EFD09A", "#EFD09A", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "#EFD09A", "#EFD09A" 			//row 13
+						, "grey", "grey", "blue", "blue", "blue", "grey", "grey", "blue", "blue", "blue", "grey", "grey" 						//row 14
+						, "grey", "Brown", "Brown", "Brown", "grey", "grey", "grey", "grey", "Brown", "Brown", "Brown", "grey" 					//row 15
+						, "Brown", "Brown", "Brown", "Brown", "black", "black", "black", "black", "Brown", "Brown", "Brown", "Brown"]; 			//row 16
+	
+	
+	//This is the function that updates every "pixel" for mario
+	var i;
+	function NormalMario() {
+		for (i = 0; i < 192; i++) { 
+			document.getElementsByTagName("div")[i].style.backgroundColor = MarioPixelColors[i];
+		}
+	}
+	
+	
+
+
+//The following is the animation frames and populating them
+	
+	//Frame 1 of animation
+	var MarioAnimationPixelOne = ["grey", "grey", "grey", "red", "red", "red", "red", "red", "grey", "grey", "grey", "grey" 							//row 1 
+								, "grey", "grey", "red", "red", "red", "red", "red", "red", "red", "red", "red", "grey"									//row 2
+								, "grey", "grey", "Brown", "Brown", "Brown", "#EFD09A", "#EFD09A", "black", "#EFD09A", "grey", "grey", "grey" 			//row 3
+								, "grey", "Brown", "#EFD09A", "Brown", "#EFD09A", "#EFD09A", "#EFD09A", "black", "#EFD09A", "#EFD09A", "#EFD09A", "grey" //row 4
+								, "grey", "Brown", "#EFD09A", "Brown", "Brown", "#EFD09A", "#EFD09A", "#EFD09A", "black", "#EFD09A", "#EFD09A", "#EFD09A" //row 5
+								, "grey", "Brown", "Brown", "#EFD09A", "#EFD09A", "#EFD09A", "#EFD09A", "black", "black", "black", "black", "grey" 		 //row 6
+								, "grey", "grey", "grey", "#EFD09A", "#EFD09A", "#EFD09A", "#EFD09A", "#EFD09A", "#EFD09A", "#EFD09A", "grey", "grey" 	 //row 7
+								, "grey", "grey", "red", "red", "red", "red", "blue", "red", "red", "#EFD09A", "#EFD09A", "grey"						// row 8
+								, "grey", "#EFD09A", "red", "red", "red", "red", "red", "red", "#EFD09A", "#EFD09A", "#EFD09A", "#EFD09A"				// row 9
+								, "#EFD09A", "#EFD09A", "blue", "red", "red", "red", "red", "red", "#EFD09A", "#EFD09A", "#EFD09A", "grey"				// row 10
+								, "brown", "brown", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "grey", "grey"						// row 11
+								, "brown", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "grey", "grey"						// row 12
+								, "brown", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "grey", "grey", "grey"						// row 13
+								, "brown", "grey", "grey", "grey", "brown", "brown", "brown", "brown", "grey", "grey", "grey", "grey"					// row 14
+								, "grey", "grey", "grey", "grey", "brown", "brown", "brown", "brown", "brown", "grey", "grey", "grey"					// row 15
+								, "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black"]; 			// row 16
+	
+	
+	var ii;
+	function AnimationMarioOne() {
+		for (ii = 0; ii < 192; ii++) { 
+			document.getElementsByTagName("div")[ii].style.backgroundColor = MarioAnimationPixelOne[ii];
+		}
+	}
+	
+	
+	
+	//Frame 2 of animation
+	var MarioAnimationPixelTwo = ["grey", "grey", "grey", "red", "red", "red", "red", "red", "grey", "grey", "grey", "grey" 							//row 1 
+								, "grey", "grey", "red", "red", "red", "red", "red", "red", "red", "red", "red", "grey"									//row 2
+								, "grey", "grey", "Brown", "Brown", "Brown", "#EFD09A", "#EFD09A", "black", "#EFD09A", "grey", "grey", "grey" 			//row 3
+								, "grey", "Brown", "#EFD09A", "Brown", "#EFD09A", "#EFD09A", "#EFD09A", "black", "#EFD09A", "#EFD09A", "#EFD09A", "grey" //row 4
+								, "grey", "Brown", "#EFD09A", "Brown", "Brown", "#EFD09A", "#EFD09A", "#EFD09A", "black", "#EFD09A", "#EFD09A", "#EFD09A" //row 5
+								, "grey", "Brown", "Brown", "#EFD09A", "#EFD09A", "#EFD09A", "#EFD09A", "black", "black", "black", "black", "grey" 		 //row 6
+								, "grey", "grey", "grey", "#EFD09A", "#EFD09A", "#EFD09A", "#EFD09A", "#EFD09A", "#EFD09A", "#EFD09A", "grey", "grey" 	 //row 7
+								, "grey", "grey", "red", "red", "blue", "red", "red", "red", "red", "grey", "grey", "grey"								// row 8
+								, "grey", "red", "red", "red", "red", "blue", "blue", "red", "red", "red", "grey", "grey"								// row 9
+								, "grey", "red", "red", "red", "blue", "blue", "yellow", "blue", "blue", "#EFD09A", "#EFD09A", "grey"					// row 10
+								, "grey", "red", "red", "red", "red", "blue", "blue", "blue", "blue", "blue", "blue", "grey"							// row 11
+								, "grey", "blue", "red", "red", "#EFD09A", "#EFD09A", "#EFD09A", "blue", "blue", "blue", "blue", "grey"					// row 12
+								, "grey", "grey", "blue", "red", "#EFD09A", "#EFD09A", "blue", "blue", "blue", "blue", "grey", "grey"					// row 13
+								, "grey", "grey", "grey", "blue", "blue", "blue", "brown", "brown", "brown", "brown", "grey", "grey"					// row 14
+								, "grey", "grey", "grey", "brown", "brown", "brown", "brown", "brown", "brown", "brown", "brown", "grey"				// row 15
+								, "black", "black", "black", "brown", "brown", "brown", "brown", "brown", "black", "black", "black", "black"];			// row 16
+								
+	var iii;
+	function AnimationMarioTwo() {
+		for (iii = 0; iii < 192; iii++) { 
+			document.getElementsByTagName("div")[iii].style.backgroundColor = MarioAnimationPixelTwo[iii];
+		}
+	}
+	
+	
+	
+	//Frame 3 of animation
+	var MarioAnimationPixelThree = ["grey", "grey", "grey", "red", "red", "red", "red", "red", "grey", "grey", "grey", "grey" 							//row 1 
+								, "grey", "grey", "red", "red", "red", "red", "red", "red", "red", "red", "red", "grey"									//row 2
+								, "grey", "grey", "Brown", "Brown", "Brown", "#EFD09A", "#EFD09A", "black", "#EFD09A", "grey", "grey", "grey" 			//row 3
+								, "grey", "Brown", "#EFD09A", "Brown", "#EFD09A", "#EFD09A", "#EFD09A", "black", "#EFD09A", "#EFD09A", "#EFD09A", "grey" //row 4
+								, "grey", "Brown", "#EFD09A", "Brown", "Brown", "#EFD09A", "#EFD09A", "#EFD09A", "black", "#EFD09A", "#EFD09A", "#EFD09A" //row 5
+								, "grey", "Brown", "Brown", "#EFD09A", "#EFD09A", "#EFD09A", "#EFD09A", "black", "black", "black", "black", "grey" 		 //row 6
+								, "grey", "grey", "grey", "#EFD09A", "#EFD09A", "#EFD09A", "#EFD09A", "#EFD09A", "#EFD09A", "#EFD09A", "grey", "grey" 	 //row 7
+								, "red", "red", "red", "red", "blue", "blue", "red", "red", "red", "grey", "grey", "grey"								// row 8
+								, "red", "red", "red", "red", "blue", "blue", "blue", "red", "red", "red", "#EFD09A", "#EFD09A"							// row 9
+								, "#EFD09A", "#EFD09A", "red", "red", "blue", "yellow", "blue", "blue", "blue", "red", "red", "#EFD09A"					// row 10
+								, "#EFD09A", "#EFD09A", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "grey", "brown"					// row 11
+								, "grey", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "brown", "brown"						// row 12
+								, "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "brown", "brown"						// row 13
+								, "brown", "blue", "blue", "blue", "blue", "grey", "grey", "blue", "blue", "blue", "brown", "brown"						// row 14
+								, "brown", "brown", "brown", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey"						// row 15
+								, "brown", "brown", "brown", "brown", "black", "black", "black", "black", "black", "black", "black", "black"];			// row 16
+								
+									
+	var iiii;
+	function AnimationMarioThree() {
+		for (iiii = 0; iiii < 192; iiii++) { 
+			document.getElementsByTagName("div")[iiii].style.backgroundColor = MarioAnimationPixelThree[iiii];
+		}
+	}
+	
+	
+	//This function runs on timeouts to display each frame consecutively 
+	function Animate() {
+		setTimeout(AnimationMarioOne, 200);
+		setTimeout(AnimationMarioTwo, 400);
+		setTimeout(AnimationMarioThree, 600);
+		setTimeout(AnimationMarioTwo, 800);
+		setTimeout(AnimationMarioOne, 1000);
+		setTimeout(AnimationMarioTwo, 1200);
+		setTimeout(AnimationMarioThree, 1400);
+		setTimeout(AnimationMarioTwo, 1600);
+		setTimeout(AnimationMarioOne, 1800);
+		setTimeout(AnimationMarioTwo, 2000);
+		setTimeout(AnimationMarioThree, 2200);
+		setTimeout(AnimationMarioTwo, 2400);
+		setTimeout(AnimationMarioOne, 2600);
+		setTimeout(AnimationMarioTwo, 2800);
+		setTimeout(AnimationMarioThree, 3000);
+		setTimeout(AnimationMarioTwo, 3200);
+		setTimeout(AnimationMarioOne, 3400);
+		setTimeout(AnimationMarioTwo, 3600);
+		setTimeout(AnimationMarioThree, 3800);
+		setTimeout(AnimationMarioTwo, 4000);
+		setTimeout(AnimationMarioOne, 4200);
+	}
+	
+	</script>
+</body>
+
+</html>

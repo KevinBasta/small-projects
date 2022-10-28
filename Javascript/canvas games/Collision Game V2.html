@@ -1,0 +1,270 @@
+<!DOCTYPE html>         
+
+<html lang="en">        
+
+<head>                 
+    <title>Gravity Maina</title>     
+    <meta charset="utf-8">   
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">   
+    <style>
+		@import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono');
+	</style>  
+</head>
+<body>
+
+	<center>
+		<canvas id="gameCanvas" width="800" height="600"></canvas>
+	</center>
+
+<script>
+var canvas;
+var canvasContext;
+const PLAYER_HEIGHT = 100;
+const PLAYER_WIDTH = 100;
+var playerColor = "white";
+var playerYPos = 495;
+var RandomBallPosX = Math.floor(Math.random()*800+1);
+var RandomBallPosY = Math.floor(Math.random()*-100+1);
+var RandomBallRadius = Math.floor(Math.random()*50+10);
+var RandomBallSpeed = Math.floor(Math.random()*27+10);
+var Playerlives = 3;
+var showingLosingScreen = false;
+var showingLostLife = false;
+var showingMenue = true;
+var PlayerScore = 0;
+var i;
+
+//seeing where the mouse is
+function calculateMousePos(evt) {
+	var rect = canvas.getBoundingClientRect();
+	var root = document.documentElement;
+	var mouseX = evt.clientX - rect.left - root.scrollLeft;
+	var mouseY = evt.clientY - rect.top - root.scrollTop;
+	return {
+		x:mouseX,
+		y:mouseY
+	};
+}
+
+//on mouse click gamestarts if showing MainMenue 
+function handleMouseClick2(evt) {
+	if (showingMenue) {
+		Playerlives = 3;
+		ballsReset();
+		playerColor = "white";
+		PlayerScore = 0;
+		showingMenue = false;
+		return;
+	}
+}
+
+//on mouse click if showing lost screen game resets
+function handleMouseClick(evt) {
+	if (showingLosingScreen) {
+			Playerlives = 4;
+			ballsReset();
+			playerColor = "white";
+			PlayerScore = 0;
+			showingLosingScreen = false;
+			return;
+	}
+}
+
+//on mouse click if showing lost life game resets, score pauses and then contines
+function handleMouseClick3(evt) {
+	if (showingLostLife) {
+			Playerlives -= 1;
+			ballsReset();
+			ballLostLifeReset();
+			playerColor = "white";
+			PlayerScore = PlayerScore;
+			PlayerScore = PlayerScore++;
+			showingLostLife = false;
+			return;
+	}
+}
+
+window.onload = function(){
+	//Canvas Setup
+	canvas = document.getElementById("gameCanvas");
+	canvasContext = canvas.getContext("2d");
+	
+	//Game Frame Update Rate
+	var framesPerSecond = 40;
+	setInterval(function() {
+		drawEverything();
+		moveEverything();
+	}, 1000/framesPerSecond);
+	
+	//onclick restart
+	canvas.addEventListener("mousedown", handleMouseClick);
+	canvas.addEventListener("mousedown", handleMouseClick2);
+	canvas.addEventListener("mousedown", handleMouseClick3);
+	//asigns the player to where the mouse is
+	canvas.addEventListener("mousemove",
+		function(evt){
+			var mousePos = calculateMousePos(evt);
+			playerPos = mousePos.x;
+		})
+}
+
+//This is a function to reset the ball position everytime it doesn't hit the player 
+function ballsReset(){
+	RandomBallPosX = Math.floor(Math.random()*800+1);
+	RandomBallPosY = Math.floor(Math.random()*-100+1);
+	RandomBallRadius = Math.floor(Math.random()*50+10);
+	RandomBallSpeed = Math.floor(Math.random()*27+10);
+}
+
+
+//This function moves the ball and checks if player got hit
+function moveEverything() {
+	if (showingMenue) {
+		return;
+	}
+	
+	if (showingLosingScreen) {
+		return;
+	}
+
+	if (RandomBallPosY < 700) {
+		RandomBallPosY += RandomBallSpeed;
+	}
+	if (RandomBallPosY > 630){
+			ballsReset();
+		} 
+	
+	if (RandomBallPosY < 530 && RandomBallPosY > 450) {
+		if (RandomBallPosX > playerPos-50 && RandomBallPosX < playerPos+50) {
+			RandomBallSpeed = 5;
+			playerColor = "#9F2222";
+			showingLostLife = true;
+		}
+	} 
+}
+
+//These are properties for the Menue animation
+function ballMenueReset() {
+	RandomBallPosXMenue = Math.floor(Math.random()*800+1);
+	RandomBallPosYMenue = Math.floor(Math.random()*30+1);
+	RandomBallRadiusMenue = Math.floor(Math.random()*70+30);
+	RandomBallSpeedMenue = Math.floor(Math.random()*27+10);
+}
+
+function MenueAnimation() {
+	if (RandomBallPosYMenue < 700) {RandomBallPosYMenue += RandomBallSpeedMenue};
+	if (RandomBallPosYMenue > 650) {ballMenueReset()};
+}
+
+	var RandomBallPosXMenue = Math.floor(Math.random()*800+1);
+	var RandomBallPosYMenue = Math.floor(Math.random()*30+1);
+	var RandomBallRadiusMenue = Math.floor(Math.random()*70+30);
+	var RandomBallSpeedMenue = Math.floor(Math.random()*27+10);
+
+
+//These are properties for the lostlife menue animation
+function ballLostLifeReset() {
+	RandomBallPosXLostLife = Math.floor(Math.random()*800+1);
+	RandomBallPosYLostLife = -10;
+	RandomBallRadiusLostLife = Math.floor(Math.random()*50+10);
+	RandomBallSpeedLostLife = 10;
+}
+
+function LostLifeAnimation() {
+	if (RandomBallPosYLostLife < 245) {RandomBallPosYLostLife += 10};
+	if (RandomBallPosYLostLife > 245) {RandomBallPosYLostLife = 245};
+}
+	var RandomBallPosXLostLife = Math.floor(Math.random()*620+170);
+	var RandomBallPosYLostLife = Math.floor(Math.random()*30+1);
+	var RandomBallRadiusLostLife = Math.floor(Math.random()*50+10);
+	var RandomBallSpeedLostLife = 10;
+	
+
+	
+function drawEverything() {
+	//this blacks out the canvas
+	colorRect(0,0,canvas.width,canvas.height,"black"); 
+		
+		//This is what is displayed if MainMenue is Displayed
+		if(showingMenue) {
+			txtDisplay("400 45px ShareTechMono", "white", "WELCOME TO GRAVITY MAINA!!", 50, 200);
+			txtDisplay("200 30px ShareTechMono", "#B5B5B5", "Your Goal Is To Not Get Hit By The Metiors!", 125, 250);
+			txtDisplay("200 30px ShareTechMono", "#B5B5B5", "Move Your Mouse To Move Your Character", 130, 300);
+			txtDisplay("400 20px ShareTechMono", "white", "Click to start..", 330, 450);
+			colorCircle(RandomBallPosXMenue, RandomBallPosYMenue, RandomBallSpeedMenue, "red");
+			MenueAnimation();
+			return;
+		}
+		
+		
+		//This is what is displayed if Player Lost the game
+		if (showingLosingScreen) {
+			txtDisplay("400 80px ShareTechMono", "white", "You Lost! :(", 200, 300);
+			txtDisplay("400 40px ShareTechMono", "white", "Your score is " +PlayerScore+ "!", 230, 340);
+			txtDisplay("400 20px ShareTechMono", "white", "Click to retry..", 320, 450);
+			return;
+		}
+		
+		
+		//This is what is displayed if Player Lost a life
+		if (showingLostLife) {
+			if (Playerlives == 0) {
+				showingLosingScreen = true;
+				return;
+			}
+			LostLifeAnimation()
+			colorRect(170, 260,450 ,PLAYER_HEIGHT, "#A73333"); // Overall for coligion
+			colorRect(470, 260,PLAYER_WIDTH ,PLAYER_HEIGHT, "#A73333");
+			colorRect(420, 260,PLAYER_WIDTH ,PLAYER_HEIGHT, "#B44343");
+			colorRect(370, 260,PLAYER_WIDTH ,PLAYER_HEIGHT, "#C46868");
+			colorRect(320, 260,PLAYER_WIDTH ,PLAYER_HEIGHT, "#DB9B9B");
+			colorRect(270, 260,PLAYER_WIDTH ,PLAYER_HEIGHT, "#E9C3C3");
+			colorRect(220, 260,PLAYER_WIDTH ,PLAYER_HEIGHT, "#F5E0E0");
+			colorRect(170, 260,PLAYER_WIDTH ,PLAYER_HEIGHT, "#FFFFFF"); //1st white
+			colorRect(520, 260,PLAYER_WIDTH ,PLAYER_HEIGHT, "#9F2222"); //last red 
+			txtDisplay("800 30px ShareTechMono", "#404040", "Player live(s)", 300, 300);
+			txtDisplay("20 25px ShareTechMono", "#404040", Playerlives - 1, 370, 340);
+			txtDisplay("400 80px ShareTechMono", "white", "You Lost A Life!", 130, 200);
+			txtDisplay("400 20px ShareTechMono", "white", "Click to continue..", 320, 450);
+			colorCircle(220, RandomBallPosYLostLife, 20, "red");
+			return;
+		}
+		
+	//player score must be here so it stops counting when showing one of the menues
+	PlayerScore++; 
+	//Player lives
+	txtDisplay("800 30px ShareTechMono", "white", "Player live(s)", 620, 50);
+	txtDisplay("20 25px ShareTechMono", "white", Playerlives, 690, 75);
+	//Player Score
+	txtDisplay("800 30px ShareTechMono", "white", "Your Score:", 620, 115);
+	txtDisplay("20 25px ShareTechMono", "white", PlayerScore, 680, 135);
+	// this is the player
+	colorRect(playerPos  - (PLAYER_WIDTH / 2), playerYPos,PLAYER_WIDTH ,PLAYER_HEIGHT, playerColor);
+	// This is the ball
+	colorCircle(RandomBallPosX, RandomBallPosY, RandomBallRadius, "red");
+}
+
+//this condences the code to make making a circle simpler
+function colorCircle(centerX, centerY, radius, drawColor) {
+	canvasContext.fillStyle = drawColor;
+	canvasContext.beginPath();
+	canvasContext.arc(centerX, centerY, radius, 0, Math.PI*2,true);
+	canvasContext.fill();
+}
+//this condences the properties I need for writing text on a canvas
+function txtDisplay(font, fontColor, text, xPos, yPos) {
+	canvasContext.font = font;
+	canvasContext.fillStyle = fontColor;
+	canvasContext.fillText(text, xPos, yPos);
+}
+
+//this condences the code to make making shapes simpler
+function colorRect(leftX, topY, width, height, drawColor) {
+	canvasContext.fillStyle = drawColor;
+	canvasContext.fillRect(leftX, topY, width, height);
+}
+</script>
+</body>
+    
+</html>
+

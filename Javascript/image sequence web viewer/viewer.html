@@ -1,0 +1,88 @@
+<!DOCTYPE html>         
+<html lang="en">
+    <head>                 
+        <title>Document Viewer</title>     
+        <meta charset="utf-8">   
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+        <link rel="Stylesheet" type="text/css" href="Common.css">
+        <script src="https://kit.fontawesome.com/45f0195622.js" crossorigin="anonymous"></script>
+    </head>
+        
+    <body onkeydown="checkKey(event)">
+        
+        <div class="Header">
+        </div>
+
+        <div id="Viewer" class="Viewer">     
+            <img id="ImageViewed" class="ImageViewed" style="width: 80vw;">
+        </div>
+
+        <div class="Footer">
+            <i class="fas fa-arrow-left LR" onclick="previousImage()"></i>
+            <i class="fas fa-arrow-right LR" onclick="nextImage()"></i>
+
+            <i class="fas fa-plus PM" onclick="makeBigger()"></i>
+            <i class="fas fa-minus PM" onclick="makeSmaller()"></i>
+        </div>
+
+        <script>
+            ImageViewed = document.getElementById("ImageViewed");
+            ImageViewer = document.getElementById("Viewer");
+
+            // User Define these variables in order to display a sequence of images 
+            const folderPrefix = "images"; //include file path if not in the same folder
+            let filePrefixForSingleDigits = "pic_0";
+            let filePrefixForDoubleDigits = "pic_";
+            let filePrefix = filePrefixForSingleDigits;
+            const suffix = ".png";
+            
+
+            let i = 1;
+            ImageViewed.src = folderPrefix + "/" + filePrefix + i + suffix;
+
+            function checkKey(e) {
+                e = e || window.event;
+
+                if (e.keyCode == '37') {
+                    previousImage();
+                }
+                else if (e.keyCode == '39') {
+                    nextImage();
+                }
+            }
+            
+            function makeBigger() {
+                ImageViewed.style.width = (parseInt(ImageViewed.style.width) + 10) + "vw";
+            }
+
+            function makeSmaller() {
+                ImageViewed.style.width = (parseInt(ImageViewed.style.width) - 10) + "vw";
+            }
+
+            function nextImage() {
+                i += 1;
+                setFileName();
+                ImageViewer.scrollTop = 0;
+                ImageViewed.src = folderPrefix + "/" + filePrefix + i + suffix;
+            }
+            
+            function previousImage() {
+                i -= 1;
+                setFileName();
+                ImageViewer.scrollTop = 0;
+                ImageViewed.src = folderPrefix + "/" + filePrefix + i + suffix;
+            }
+
+            function setFileName() {
+                if (i > 9) {
+                    filePrefix = filePrefixForDoubleDigits;
+                } else {
+                    filePrefix = filePrefixForSingleDigits;
+                }
+            }
+
+        </script>
+
+    </body>
+    
+</html>

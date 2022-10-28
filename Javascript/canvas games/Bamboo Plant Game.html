@@ -1,0 +1,178 @@
+<!DOCTYPE html>         
+
+<html lang="en">        
+
+<head>                 
+    <title>Bamboo Growing Game</title>     
+    <meta charset="utf-8">   
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">  
+    <style>
+		@import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono');
+	</style>  
+<body>
+	<center>
+		<canvas id="gameCanvas" width="800" height="600"></canvas>
+	</center>
+<script>
+var cloudAnimation = 0;
+var cloudHelp = 100;
+var PlantHeight = -100;
+var PlantColour = "#1DC957";
+var playerYPos = 550;
+var PlantHeightDisplay;
+var nullscreen = true;
+var Rebirth = 0;
+
+function handleMouseClick(evt) {
+	if (nullscreen) {
+			PlantHeight += -20;
+			playerColor = "3BD770";
+			return;
+	}
+}
+
+window.onload = function(){
+	console.log("hello world");
+	canvas = document.getElementById("gameCanvas");
+	canvasContext = canvas.getContext("2d");
+	
+	var framesPerSecond = 30;
+	setInterval(function() {
+		moveEverything();
+		drawEverything();
+	}, 1000/framesPerSecond); //The number (second value) is how long the program waits between calling each function
+	canvas.addEventListener("mousedown", handleMouseClick);
+}
+
+function moveEverything() {
+	PlantHeight -= -0.9;
+}
+
+function moveClouds() {
+var clouddown = cloudAnimation += 0.1; 
+var cloudup = cloudAnimation -= 0.1;
+
+}
+
+function drawEverything(){
+	//this is the canvas gradient background
+	colorRect(0,0,canvas.width,canvas.height,"black"); 
+	var grd = canvasContext.createRadialGradient(400, 650, 400, 400, 650, 450);
+	grd.addColorStop(0, "#FFE12F");
+	grd.addColorStop(0.25, "#FFBE29");
+	grd.addColorStop(1, "#698EE6");
+	canvasContext.fillStyle = grd;
+	canvasContext.fillRect(0, 0, canvas.width, canvas.height);
+	
+	//these are the hills in the background
+	colorCircle(50, 710, 350, "#179847");
+	colorCircle(400, 790, 350, "#179847");
+	colorCircle(650, 790, 360, "#179847");
+	
+	//background hills
+	colorCircle(50, 720, 350, "#0F8440");
+	colorCircle(650, 800, 360, "#0F8440");
+	colorCircle(400, 800, 350, "#108742");
+	colorCircle(650, 820, 360, "#0F8440");
+	colorCircle(650, 820, 360, "#0D803D");
+	colorCircle(400, 820, 360, "#0D803D");
+	colorCircle(650, 840, 360, "#0D7438");
+	colorCircle(50, 750, 350, "#0D803D");
+	colorCircle(50, 800, 350, "#0D7438");
+	colorCircle(400, 865, 400, "#0D7438");
+	
+	//forground hills
+	colorCircle(400, 970, 500, "#1BAE59");
+	colorCircle(700, 1000, 500, "#1BAE59");
+	colorCircle(50, 1000, 500, "#1BAE59");
+	colorCircle(400, 1000, 500, "#19A052");
+	colorCircle(700, 1010, 500, "#19A052");
+	colorCircle(50, 1010, 500, "#19A052");
+	
+	backgroundClouds();
+	
+	function backgroundClouds() {
+		moveClouds();
+		//cloud 1
+		colorCircle(720, 120 + cloudAnimation, 32, "white");
+		colorCircle(700, 75 + cloudAnimation, 35, "white");
+		colorCircle(680, 110 + cloudAnimation, 35, "white");
+		
+		//cloud 2
+		colorCircle(500, 130 + cloudAnimation, 30, "white");
+		colorCircle(450, 130 + cloudAnimation, 35, "white");
+		colorCircle(430, 100 + cloudAnimation, 35, "white");
+		colorCircle(470, 100 + cloudAnimation, 35, "white");
+		colorCircle(400, 130 + cloudAnimation, 30, "white");
+		
+		//cloud 3
+		colorCircle(150, 75 + cloudAnimation, 30, "white");
+		colorCircle(180, 80 + cloudAnimation, 30, "white");
+		colorCircle(210, 85 + cloudAnimation, 30, "white");
+		colorCircle(170, 100 + cloudAnimation, 30, "white");
+		colorCircle(230, 100 + cloudAnimation, 30, "white");
+		colorCircle(195, 100 + cloudAnimation, 30, "white");
+		
+		//cloud 4
+		colorCircle(-10, 80 + cloudAnimation, 30, "white");
+		colorCircle(0, 90 + cloudAnimation, 30, "white");
+		
+		//cloud 5 
+		colorCircle(820, 50 + cloudAnimation, 30, "white");
+		colorCircle(825, 80 + cloudAnimation, 30, "white");
+		
+		
+		//plant
+		var PlantCm = Math.floor(PlantHeightDisplay = -PlantHeight);
+		var plantTxtPos = playerYPos+PlantHeight +10;
+		colorRect(340, playerYPos, 40, PlantHeight, PlantColour);
+		txtDisplay("800 30px ShareTechMono", "black", PlantCm + "Cm", 390, plantTxtPos);
+		if (PlantHeight <= -500) {
+			PlantHeight = 0;
+			Rebirth +=1;
+		}
+		if (PlantCm > 50) {
+			colorRect(340, 500, 40, 10, "#BFF3D1");
+		} if (PlantCm > 150) {
+			colorRect(340, 400, 40, 10, "#BFF3D1");
+		} if (PlantCm > 250) {
+			colorRect(340, 300, 40, 10, "#BFF3D1");
+		} if (PlantCm > 350) {
+			colorRect(340, 200, 40, 10, "#BFF3D1");
+		} if (PlantCm > 450) {
+			colorRect(340, 100, 40, 10, "#BFF3D1");
+		} if (PlantCm > 550) {
+			colorRect(340, 0, 40, 10, "#BFF3D1");
+		}
+		
+		txtDisplay("800 30px ShareTechMono", "black", "Rebirth(s)", 650, 100);
+		txtDisplay("800 30px ShareTechMono", "black", Rebirth, 700, 130);
+	}
+	
+}
+
+//this condences the code to make making a circle simpler
+function colorCircle(centerX, centerY, radius, drawColor) {
+	canvasContext.fillStyle = drawColor;
+	canvasContext.beginPath();
+	canvasContext.arc(centerX, centerY, radius, 0, Math.PI*2,true);
+	canvasContext.fill();
+}
+//this condences the properties I need for writing text on a canvas
+function txtDisplay(font, fontColor, text, xPos, yPos) {
+	canvasContext.font = font;
+	canvasContext.fillStyle = fontColor;
+	canvasContext.fillText(text, xPos, yPos);
+}
+
+//this condences the code to make making shapes simpler
+function colorRect(leftX, topY, width, height, drawColor) {
+	canvasContext.fillStyle = drawColor;
+	canvasContext.fillRect(leftX, topY, width, height);
+}
+</script>
+
+</body>
+    
+</html>
+

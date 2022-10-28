@@ -1,0 +1,177 @@
+<!DOCTYPE html>         
+
+<html lang="en">        
+
+<head>                 
+    <title>Room Finder</title>     
+    <meta charset="utf-8">   
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Oswald" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <style>
+	body {
+	    margin: 0;
+		padding: 0;	
+	}
+    .Header {
+		height: 300px;
+		background-color: #B11C1C;
+		width: 100%;    
+	}
+	
+	.Form {
+		background-color: #EFEFEF;
+		padding: 10px;
+	}
+	
+	p {
+		font-family: Fjalla One;
+		font-size:3vw;
+	}
+	
+	form p {
+		margin-bottom: 0px;
+		margin-left: -140px;
+		font-size: 20px;
+	}
+	
+	form input {
+		font-family: Fjalla One;
+	}
+	#RoomToFind {
+		width: 250px;
+		height: 50px;
+	}
+	
+	#SumbitName {
+		width: 255px;
+		height: 75px;
+	}
+	
+	h1 {
+		font-size: 75px;
+		font-family: Oswald;
+		margin: 0px;
+		padding-top: 80px;
+	}
+    
+	.roomNumbers {
+		position: relative;
+	}
+	
+	.Room_123 {
+		position: absolute;
+		top: 3%;
+		left: 13%;
+	}
+	
+	.Room_124 {
+		position: absolute;
+		top: 33%;
+		left: 75%;
+	}
+	
+	.Room_103 {
+		position: absolute;
+		top: 31%;
+		left: 28%;
+	}
+	
+	.Room_113 {
+		position: absolute;
+		top: 3%;
+		left: 28%;
+	}
+	
+	.Room_204 {
+		position: absolute;
+		top: 3%;
+		left: 70.5%;
+	}
+	
+	.Room_244 {
+		position: absolute;
+		top: 46%;
+		left: 75%;
+	}
+	
+	.Room_224 {
+		position: absolute;
+		top: 72%;
+		left: 72.5%;
+	}
+	
+	.Map_Image {
+		width: 80%;
+		height: auto;
+	}
+	
+	
+    </style>
+</head>
+    
+<body>
+
+<div class="Header">
+	<center>
+		<h1>Find A Room!</h1>
+	</center>
+
+</div>
+
+<div class="Form">
+	<center>
+		<!-- User input room number-->
+		<form>
+			<p>Room Number:</p>
+			<input type="number" placeholder="124.." id="RoomToFind"><br>
+			<input type="button" value="Find Room" onclick="findRoom()" id="SumbitName">
+		</form>
+		
+		<!-- test floor plan and room numbers text -->
+		<div class="roomNumbers">
+			<img class="Map_Image" src="FloorPlan.png">
+			
+			<div class="Room_123"><p id="123">123</p></div>
+			<div class="Room_124"><p id="124">124</p></div>
+			<div class="Room_103"><p id="103">103</p></div>
+			<div class="Room_113"><p id="113">113</p></div>
+			<div class="Room_204"><p id="204">204</p></div>
+			<div class="Room_244"><p id="244">244</p></div>
+			<div class="Room_224"><p id="224">224</p></div>
+		</div>
+	</center>
+</div>
+
+
+<script>
+
+//List of rooms
+var Room_Numbers = [123, 124, 103, 113, 204, 244, 224];
+
+//Function happens when user clicks "Find Room"
+function findRoom() {
+	var RoomToFindd = document.getElementById("RoomToFind").value;
+	
+	for (i = 0; i < Room_Numbers.length; i++) {
+		var Room_Element = document.getElementById(Room_Numbers[i]);
+		
+		//the for loop checks if the room name is red from previous searsh and tuns it back to black
+		if (Room_Element.style.color == "red") {
+			Room_Element.style.color = "black";
+		}
+		
+		//the for loop then checks to see if the user input is in the list of rooms, if it is it turns it red 
+		if (RoomToFindd == Room_Numbers[i]) {
+			console.log(i);
+			Room_Element.style.color = "red";
+		}
+	}
+}
+
+</script>
+
+
+</body>
+    
+</html>
+

@@ -1,0 +1,239 @@
+<!DOCTYPE html>         
+
+<html lang="en">        
+
+<head>                 
+    <title>Pixel Art Maker With JS</title>     
+    <meta charset="utf-8">   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <style>
+		body {
+			-webkit-user-select: none;
+			-moz-user-select: -moz-none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+		div {
+			width: 30px;
+			height: 30px;
+			border: 1px solid black;
+			background-color: #CCCCCC;
+			float: left;
+			padding: 2px;
+			cursor: url("bettercursor.cur"),auto;
+		}	
+		
+		form div {
+			transition: 2s;
+			cursor: pointer;
+		}
+		
+		form div:visited {
+			width: 40px;
+			height: 40px;
+		}
+    </style>
+</head>
+    
+<body>
+	<!-- every div represents a pixel -->
+	<div id="1" onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="2" onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="3" onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="4"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="5"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="6"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="7"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="8"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="9"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="10"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<br><br>
+	<div id="11"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="12"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="13"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="14"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="15"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="16"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="17"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="18"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="19"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="20"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<br><br>
+	<div id="21"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="22"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="23"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="24"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="25"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="26"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="27"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="28"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="29"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="30"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<br><br>
+	<div id="31"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="32"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="33"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="34"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="35"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="36"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="37"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="38"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="39"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="40"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<br><br>
+	<div id="41"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="42"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="43"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="44"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="45"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="46"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="47"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="48"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="49"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="50"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<br><br>
+	<div id="51"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="52"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="53"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="54"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="55"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="56"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="57"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="58"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="59"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="60"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<br><br>
+	<div id="61"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="62"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="63"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="64"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="65"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="66"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="67"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="68"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="69"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="70"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<br><br>
+	<div id="71"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="72"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="73"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="74"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="75"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="76"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="77"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="78"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="79"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="80"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<br><br>
+	<div id="81"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="82"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="83"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="84"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="85"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="86"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="87"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="88"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="89"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="90"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<br><br>
+	<div id="91"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="92"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="93"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="94"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="95"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="96"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="97"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="98"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="99"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<div id="100"onclick="changePixelColor(this)" onMouseOver="changePixelColorForMouseOver(this)"></div>
+	<br><br>
+
+	<!-- this is the form with all the defult colors you can pick, and the input color form -->
+	<form style="position: absolute; top: 10px; left: 390px;">
+		<table>
+			<tr>
+				<td colspan="5"><center>
+					Pick A Color:
+					<input type="color" id="ColorPicked" onchange="resetColorPickerControl()" style="cursor: pointer;">
+				</center></td>
+			</tr>
+			<tr>
+				<td><div style="background-color: red;" onclick="ColorPickerChange(this)"></div></td>
+				<td><div style="background-color: blue;" onclick="ColorPickerChange(this)"></div></td>
+				<td><div style="background-color: green;" onclick="ColorPickerChange(this)"></div></td>
+				<td><div style="background-color: white;" onclick="ColorPickerChange(this)"></div></td>
+				<td><div style="background-color: black;" onclick="ColorPickerChange(this)"></div></td>
+			</tr>
+			<tr>
+				<td><div style="background-color: orange;" onclick="ColorPickerChange(this)"></div></td>
+				<td><div style="background-color: #17E2FF;" onclick="ColorPickerChange(this)"></div></td>
+				<td><div style="background-color: #1FD91F;" onclick="ColorPickerChange(this)"></div></td>
+				<td><div style="background-color: #FF13F9;" onclick="ColorPickerChange(this)"></div></td>
+				<td><div style="background-color: #9908FF;" onclick="ColorPickerChange(this)"></div></td>
+			</tr>
+			<tr>
+				<td><div style="background-color: Yellow;" onclick="ColorPickerChange(this)"></div></td>
+				<td><div style="background-color: #1195D2;" onclick="ColorPickerChange(this)"></div></td>
+				<td><div style="background-color: #1CEE07;" onclick="ColorPickerChange(this)"></div></td>
+				<td><div style="background-color: pink;" onclick="ColorPickerChange(this)"></div></td>
+				<td><div style="background-color: purple;" onclick="ColorPickerChange(this)"></div></td>
+			</tr>
+		</table>
+	</form>
+
+
+	<script>
+	
+	//This checks the color the user has picked every second
+	var ColorPicked = document.getElementById("ColorPicked").value;
+	setInterval(checkForColor, 500);
+	
+	function checkForColor() { //Sets the var ColorPicked to the color the user picks in the form
+		if (document.getElementById("ColorPicked").value != ColorPicked && colorPickerControl == 0) {
+			ColorPicked = document.getElementById("ColorPicked").value;
+			console.log(ColorPicked);
+		}
+		if (ColorPicked == ColorPicked) {
+				return;
+		}
+	}
+	
+	function changePixelColor(element) { //changes the color of the pixel on cick
+		element.style.backgroundColor = ColorPicked;
+	}
+	
+	
+	//This checks if the mouse is pressed or not
+	var mouseDown = 0;
+		document.body.onmousedown = function() { 
+		mouseDown = 1;
+		}
+		document.body.onmouseup = function() {
+		mouseDown = 0;
+		}
+	
+	//If the mouse is clicked and the user is dragging their mouse, the color of the pixel changes
+	function changePixelColorForMouseOver(element) {
+		if (mouseDown == 1) {
+			element.style.backgroundColor = ColorPicked;
+		}
+	}
+	
+	
+	//This is for the defult colors if the user uses (clicks) them
+	var colorPickerControl = 0;
+	function ColorPickerChange(elementtwo) {
+		colorPickerControl = 1;
+		ColorPicked = elementtwo.style.backgroundColor;
+	}
+	
+	//If the user changes colors from the color picker, then it overwrites the defult colors
+	function resetColorPickerControl() {
+		colorPickerControl = 0;
+	}
+	
+	</script>
+</body>
+    
+</html>
+

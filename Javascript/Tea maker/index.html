@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Tea Maker</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="Stylesheet" type="text/css" href="Common.css">
+    <style>
+    body {
+      background-color: #E2C9A5;
+    }
+
+    </style>
+</head>
+
+<body>
+
+<div class="TopHeader">
+  <img src="Images/Logo.png" style="width: 100%; height: 10%; margin: 0%;">
+  <!--<h1>RokuCraft</h1>
+  <h2>Tea Maker</h2>-->
+</div>
+
+<div class="MainBlock">
+  <!-- this is the ingredients selector which lets the user pick the ingredient they have and put in the amount they have-->
+  <div class="IngredientsUserEnter">
+    <h3>Ingredients</h3>
+  	<ol id="Ingredients">
+  		<li id="Ingredient0">
+  			<form>
+  				<!-- <p>Ingredients:</p> -->
+  				<select id="Ingredient_Select0"> <!-- ingredients -->
+  					<option>Ingredients &downarrow;</option>
+  					<option>Jasmine petals</option>
+  					<option>Green tea leaves</option>
+  					<option>White jade petals</option>
+  					<option>Ginger root</option>
+  					<option>Lychee nuts</option>
+  					<option>Oolong leaves</option>
+  					<option>Barley</option>
+  					<option>Cinnamon stick</option>
+  					<option>Chili pepper</option>
+  					<option>Brown rice</option>
+  					<option>Lily petals</option>
+  					<option>Mint leaves</option>
+  					<option>Aloe Vera</option>
+  					<option>Kombucha fungus</option>
+  					<option>Black tea leaves</option>
+  					<option>Cactus</option>
+  					<option>Sakura petals</option>
+  					<option>Hibiscus petals</option>
+  					<option>Kelp</option>
+  					<option>Papaya</option>
+  					<option>Swamp leaf</option>
+  					<option>Lychee nuts</option>
+  					<option>Silver leaf shoots</option>
+  					<option>Ginseng root</option>
+  					<option>Tapioca powder</option>
+  					<option>White Dragon petals</option>
+  					<option>Cloud leaf</option>
+  					<option>Golden leaf shoots</option>
+  					<option>Tienchi flower</option>
+  					<option>Panda Dung</option>
+  				</select>
+
+  				<!-- amount of ingredient -->
+  				<input id="ingredient_number0" type="number" min="0" placeholder="Amount of ingrednet">
+
+  				<!-- Remove -->
+  				<input type="button" value="Remove">
+  			</form>
+  		</li>
+  	</ol>
+  	  <input type="button" value="Add Item!" id="addIngredient">
+  	<br>
+    <input type="button" value="What Teas Can I Make?" onclick="check_for_tea()">
+  </div>
+
+  <div class="OutPutTables">
+    <!-- first page table -->
+    <table>
+      <h3>Page #1</h3>
+      <tr>
+        <td id="Jasmine_tea"><img src="Images/Tea.png" title="TeaName" alt="TeaName" style="height: 3vw;"></td>
+        <td id="Green_tea"><img src="Images/Tea.png" title="TeaName" alt="TeaName" style="height: 3vw;"></td>
+        <td id="White_jade_tea"><img src="Images/Tea.png" title="TeaName" alt="TeaName" style="height: 3vw;"></td>
+        <td id="Ginger_tea"><img src="Images/Tea.png" title="TeaName" alt="TeaName" style="height: 3vw;"></td>
+        <td id="Lychee_tea"><img src="Images/Tea.png" title="TeaName" alt="TeaName" style="height: 3vw;"></td>
+        <td id="Oolong_tea"><img src="Images/Tea.png" title="TeaName" alt="TeaName" style="height: 3vw;"></td>
+        <td id="Barley_tea"><img src="Images/Tea.png" title="TeaName" alt="TeaName" style="height: 3vw;"></td>
+      </tr>
+      <tr>
+        <td id="Cinnamon_tea"><img src="Images/Tea.png" title="TeaName" alt="TeaName" style="height: 3vw;"></td>
+        <td id="Ginger_green_tea"><img src="Images/Tea.png" title="TeaName" alt="TeaName" style="height: 3vw;"></td>
+        <td id="Spiced_tea"><img src="Images/Tea.png" title="TeaName" alt="TeaName" style="height: 3vw;"></td>
+        <td id="Genmaicha_tea"><img src="Images/Tea.png" title="TeaName" alt="TeaName" style="height: 3vw;"></td>
+        <td id="Jasmine_Green_tea"><img src="Images/Tea.png" title="TeaName" alt="TeaName" style="height: 3vw;"></td>
+        <td id="Jasmine_Oolong_tea"><img src="Images/Tea.png" title="TeaName" alt="TeaName" style="height: 3vw;"></td>
+        <td id="Flowering_tea"><img src="Images/Tea.png" title="TeaName" alt="TeaName" style="height: 3vw;"></td>
+      </tr>
+      <tr>
+        <td id="Mint_tea"><img src="Images/Tea.png" title="TeaName" alt="TeaName" style="height: 3vw;"></td>
+        <td id="Aloe_Vera_tea"><img src="Images/Tea.png" title="TeaName" alt="TeaName" style="height: 3vw;"></td>
+        <td id="Kombucha_tea"><img src="Images/Tea.png" title="TeaName" alt="TeaName" style="height: 3vw;"></td>
+        <td id="Black_tea"><img src="Images/Tea.png" title="TeaName" alt="TeaName" style="height: 3vw;"></td>
+        <td id="Cactus_tea"><img src="Images/Tea.png" title="TeaName" alt="TeaName" style="height: 3vw;"></td>
+        <td id="Sakura_tea"><img src="Images/Tea.png" title="TeaName" alt="TeaName" style="height: 3vw;"></td>
+        <td id="Hibiscus_tea"><img src="Images/Tea.png" title="TeaName" alt="TeaName" style="height: 3vw;"></td>
+      </tr>
+    </table>
+
+    <!-- Second page table -->
+    <table style="margin-top: 0%;">
+      <h3>Page #2</h3>
+      <tr>
+        <td id="Kelp_tea"><img src="Images/Tea.png" title="TeaName" alt="TeaName" style="height: 3vw;"></td>
+        <td id="Papaya_tea"><img src="Images/Tea.png" title="TeaName" alt="TeaName" style="height: 3vw;"></td>
+        <td id="Swamp_tea"><img src="Images/Tea.png" title="TeaName" alt="TeaName" style="height: 3vw;"></td>
+        <td id="Silver_needle_tea"><img src="Images/Tea.png" title="TeaName" alt="TeaName" style="height: 3vw;"></td>
+        <td id="Ginseng_tea"><img src="Images/Tea.png" title="TeaName" alt="TeaName" style="height: 3vw;"></td>
+        <td id="Bubble_tea"><img src="Images/Tea.png" title="TeaName" alt="TeaName" style="height: 3vw;"></td>
+        <td id="White_Dragon_tea"><img src="Images/Tea.png" title="TeaName" alt="TeaName" style="height: 3vw;"></td>
+      </tr>
+      <tr>
+        <td id="Cloud_tea"><img src="Images/Tea.png" title="TeaName" alt="TeaName" style="height: 3vw;"></td>
+        <td id="Golden_Monkey_tea"><img src="Images/Tea.png" title="TeaName" alt="TeaName" style="height: 3vw;"></td>
+        <td id="Tienchi_Flower_tea"><img src="Images/Tea.png" title="TeaName" alt="TeaName" style="height: 3vw;"></td>
+        <td id="Panda_tea"><img src="Images/Tea.png" title="TeaName" alt="TeaName" style="height: 3vw;"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><img src="Images/filler.png" title="TeaName" alt="TeaName" style="height: 3vw;"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+</div>
+	<script>
+
+	</script>
+	<script src="MainScript.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css?family=Caveat|Luckiest+Guy&display=swap');
+
+h1 {
+	text-align: center;
+	font-family: 'Luckiest Guy', cursive;
+	font-size: 40px;
+	color: white;
+}
+
+h2 {
+	text-align: center;
+	margin-left: 9%;
+	margin-top: -40px;
+	font-family: 'Caveat', cursive;
+	font-size: 25px;
+}
+
+h3{
+	text-align: center;
+	font-family: 'Caveat', cursive;
+	font-size: 30px;
+	padding: 0%;
+	margin-top: 5px;
+}
+
+.TopHeader {
+	background-color: #349A2C;
+	background-image: url("Images/kyo.png");
+	background-attachment: fixed;
+}
+
+.MainBlock {
+	 display: table;
+	 width: 100%;
+}
+
+.IngredientsUserEnter {
+	display: table-cell;
+  padding: 16px;
+	background-color: #F7D3A0;
+}
+
+.OutPutTables {
+	display: table-cell;
+  padding: 16px;
+	background-color: #EDA01B;
+}
+
+table {
+	margin-left: 15%;
+	border-width: 5px;
+	border-style: solid;
+	border-color: black;
+}
+
+td {
+	padding: 10px;
+	border-style: solid;
+	border-color: black;
+}
+
+li {
+	margin: 5px;
+}
